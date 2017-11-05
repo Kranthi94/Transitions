@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
@@ -8,21 +8,54 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:padding="16dp"
+    android:orientation="vertical"
     tools:context="com.example.android.transitions.MainActivity">
 
-    <Button
-        android:id="@+id/button"
+    <ScrollView
+        android:id="@+id/button_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Start Transition"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/content_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="ViewPager Sliding Transition"/>
+
+            <Button
+                android:id="@+id/button_flip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Flip Transition"/>
+
+            <Button
+                android:id="@+id/button_layout_transition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Layout Animation"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <LinearLayout
-        android:id="@+id/scene_root"
+        android:id="@+id/frame_container"
+        android:visibility="gone"
         android:orientation="vertical"
-        android:layout_below="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</RelativeLayout>
+</FrameLayout>
